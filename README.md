@@ -14,7 +14,7 @@ Punto 2	 Juego en Pantalla OLED
 Punto 3	 Detector de Colores CNY70
 
 
-
+```
 taller-sistemas-digitales/
 │
 ├── README.md
