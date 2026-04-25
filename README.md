@@ -6,9 +6,13 @@ Taller — Sistemas Digitales con Arduino laboratorio 2
 ---
 📋 Contenido del Taller
 Punto	Título	Video	Estado
-Punto 1	 ChatBot Básico con LEDs	
-Punto 2	 Juego en Pantalla OLED	
-Punto 3	 Detector de Colores CNY70	
+
+Punto 1	 ChatBot Básico con LEDs
+
+Punto 2	 Juego en Pantalla OLED
+
+Punto 3	 Detector de Colores CNY70
+
 ---
 
 taller-sistemas-digitales/
