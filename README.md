@@ -2,12 +2,15 @@
 # taller-sistemas-digitales
 Taller — Sistemas Digitales con Arduino laboratorio 2 
 
- Contenido del Taller
-Punto	Título	Video	Estado
-Punto 1	 ChatBot Básico con LEDs	—	 
-Punto 2	 Juego en Pantalla OLED	 Ver	 
-Punto 3	 Detector de Colores CNY70	 Ver	 
+> Taller práctico de sistemas embebidos usando Arduino UNO, sensores, pantallas OLED y comunicación serial con Python.
 ---
+📋 Contenido del Taller
+Punto	Título	Video	Estado
+Punto 1	 ChatBot Básico con LEDs	
+Punto 2	 Juego en Pantalla OLED	
+Punto 3	 Detector de Colores CNY70	
+---
+
 taller-sistemas-digitales/
 │
 ├── README.md
