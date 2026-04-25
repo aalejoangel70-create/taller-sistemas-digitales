@@ -2,44 +2,33 @@
 # taller-sistemas-digitales
 Taller — Sistemas Digitales con Arduino laboratorio 2 
 
-# 🤖 Punto 1 — ChatBot Básico: Iluminación y Monitoreo de Temperatura
+#  Punto 1 — ChatBot Básico: Iluminación y Monitoreo de Temperatura
 
-## 📌 Descripción
+##  Descripción
 
-Sistema que utiliza **Arduino UNO** para el control de LEDs mediante un chatbot conversacional simple. El chatbot corre en Python en la computadora y se comunica con el Arduino vía **comunicación serial**.
+Sistema que utiliza Arduino UNO para el control de LEDs mediante un chatbot conversacional simple. El chatbot corre en Python en la computadora y se comunica con el Arduino vía comunicación serial.
 
 ---
 
-## ⚙️ ¿Cómo funciona?
+##  ¿Cómo funciona?
 
-El usuario escribe comandos como `"encender"` o `"apagar"`, Python los envía al Arduino por puerto serial y el Arduino enciende o apaga el LED en el **pin 13**.
+El usuario escribe comandos como encender o apagar, Python los envía al Arduino por puerto serial y el Arduino enciende o apaga el LED en el pin 13.
 
 - El chatbot se ejecuta en la computadora y se comunica con Arduino vía serial
-- Cuando el usuario envía `"encender"` o `"apagar"` se controlan los LEDs
+- Cuando el usuario envía encender o apagar se controlan los LEDs
 - La interfaz visual muestra un círculo amarillo (encendido) o gris (apagado)
 
 ---
 
-## 🖼️ Evidencias
-
-### Simulación en Tinkercad
-![Simulacion Tinkercad](imagenes/simulacion_tinkercad.png)
-
-### Esquemático del circuito
-![Esquematico](imagenes/esquematico.png)
-
-### Circuito físico armado
-![Circuito fisico](imagenes/circuito_fisico.png)
-
-### Prueba de ejecución en PC
-![Ejecucion PC](imagenes/ejecucion_pc.png)
-
-### Prueba en Arduino IDE
-![Prueba Arduino](imagenes/prueba_ejecucion.png)
+![Simulacion Tinkercad](simulacion_tinkercad.png)
+![Esquematico](esquematico.png)
+![Circuito fisico](circuito_fisico.png)
+![Ejecucion PC](ejecucion_pc.png)
+![Prueba Arduino](prueba_ejecucion.png)
 
 ---
 
-## 🔌 Componentes
+##  Componentes
 
 | Componente | Cantidad |
 |-----------|---------|
@@ -57,7 +46,7 @@ El usuario escribe comandos como `"encender"` o `"apagar"`, Python los envía al
 
 ---
 
-## 💻 Código Arduino
+## Código Arduino
 
 ```cpp
 String comando;
@@ -85,7 +74,7 @@ void loop() {
 
 ---
 
-## 🐍 Archivos Python
+##  Archivos Python
 
 ### `app_visual.py` — Interfaz gráfica con Tkinter
 Muestra un círculo que simula el LED (gris = apagado, amarillo = encendido) con botones de control y respuesta por voz.
@@ -95,7 +84,7 @@ Control por texto desde la terminal con beep de frecuencia alta al encender y ba
 
 ---
 
-## ▶️ Instrucciones de uso
+##  Instrucciones de uso
 
 ```bash
 pip install pyttsx3
@@ -113,7 +102,7 @@ python app_visual.py
 
 ---
 
-## 🧠 Conceptos aplicados
+##  Conceptos aplicados
 
 - Comunicación **serial** entre Python y Arduino
 - Interfaces gráficas con **Tkinter**
