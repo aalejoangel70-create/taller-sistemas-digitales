@@ -60,6 +60,23 @@ python app_visual.py
 
 # O versión consola con sonido
 python voz_arduino.py
+
+##  Evidencias
+
+### Simulación en Tinkercad
+![Simulacion](imagenes/simulacion_tinkercad.png)
+
+### Esquemático del circuito
+![Esquematico](imagenes/esquematico.png)
+
+### Circuito físico armado
+![Circuito fisico](imagenes/circuito_fisico.png)
+
+### Prueba de ejecución en PC
+![Ejecucion PC](imagenes/ejecucion_pc.png)
+
+### Prueba en Arduino IDE
+![Prueba](imagenes/prueba_ejecucion.png)
 ```
 ---
  Videos de evidencia
