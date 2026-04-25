@@ -2,69 +2,28 @@
 # taller-sistemas-digitales
 Taller — Sistemas Digitales con Arduino laboratorio 2 
 
-> Taller práctico de sistemas embebidos usando Arduino UNO, sensores, pantallas OLED y comunicación serial con Python.
+# 🤖 Punto 1 — ChatBot Básico: Iluminación y Monitoreo de Temperatura
 
- Contenido del Taller
-Punto	Título	Video	Estado
+## 📌 Descripción
 
-Punto 1	 ChatBot Básico con LEDs
+Sistema que utiliza **Arduino UNO** para el control de LEDs mediante un chatbot conversacional simple. El chatbot corre en Python en la computadora y se comunica con el Arduino vía **comunicación serial**.
 
-Punto 2	 Juego en Pantalla OLED
-
-Punto 3	 Detector de Colores CNY70
-
-
-```
-taller-sistemas-digitales/
-│
-├── README.md
-│
-├── Punto_1_ChatBot/
-│   ├── README.md
-│   ├── sketch_arduino.ino       ← Código Arduino (control LED por serial)
-│   ├── app_visual.py            ← Chatbot con interfaz gráfica (tkinter)
-│   ├── voz_arduino.py           ← Chatbot con voz y sonido
-│   └── imagenes/
-│       ├── simulacion_tinkercad.png
-│       ├── esquematico.png
-│       ├── prueba_ejecucion.png
-│       ├── circuito_fisico.png
-│       └── ejecucion_pc.png
-│
-├── Punto_2_OLED/
-│   ├── README.md
-│   └── imagenes/
-│
-└── Punto_3_CNY70/
-    ├── README.md
-    └── imagenes/
-```
-Herramientas Utilizadas
-Herramienta	Uso
-Arduino IDE 2.3.8	Programación del microcontrolador
-Tinkercad	Simulación de circuitos
-Python 3	Chatbot (tkinter, pyttsx3, winsound)
-Arduino UNO	Microcontrolador principal
-OLED SSD1306	Pantalla para el juego
-Sensor CNY70	Detección de superficies
 ---
-Cómo ejecutar el Punto 1
-```bash
-# Instalar dependencias
-pip install pyttsx3
 
-# Cargar sketch_arduino.ino en el Arduino UNO
+## ⚙️ ¿Cómo funciona?
 
-# Ejecutar interfaz gráfica
-python app_visual.py
+El usuario escribe comandos como `"encender"` o `"apagar"`, Python los envía al Arduino por puerto serial y el Arduino enciende o apaga el LED en el **pin 13**.
 
-# O versión consola con sonido
-python voz_arduino.py
+- El chatbot se ejecuta en la computadora y se comunica con Arduino vía serial
+- Cuando el usuario envía `"encender"` o `"apagar"` se controlan los LEDs
+- La interfaz visual muestra un círculo amarillo (encendido) o gris (apagado)
 
-##  Evidencias
+---
+
+## 🖼️ Evidencias
 
 ### Simulación en Tinkercad
-![Simulacion](imagenes/simulacion_tinkercad.png)
+![Simulacion Tinkercad](imagenes/simulacion_tinkercad.png)
 
 ### Esquemático del circuito
 ![Esquematico](imagenes/esquematico.png)
@@ -76,8 +35,95 @@ python voz_arduino.py
 ![Ejecucion PC](imagenes/ejecucion_pc.png)
 
 ### Prueba en Arduino IDE
-![Prueba](imagenes/prueba_ejecucion.png)
+![Prueba Arduino](imagenes/prueba_ejecucion.png)
+
+---
+
+## 🔌 Componentes
+
+| Componente | Cantidad |
+|-----------|---------|
+| Arduino UNO | 1 |
+| LED | 1 |
+| Resistencia 220Ω | 1 |
+| Protoboard | 1 |
+| Cables | varios |
+
+### Conexión
+- LED positivo → Pin 13 del Arduino (con resistencia 220Ω)
+- LED negativo → GND
+
+🔗 [Ver simulación en Tinkercad](https://www.tinkercad.com/things/2fg1y0LspLa-chatbot-basico)
+
+---
+
+## 💻 Código Arduino
+
+```cpp
+String comando;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  if (Serial.available()) {
+    comando = Serial.readString();
+    comando.trim();
+
+    if (comando.indexOf("encender") >= 0) {
+      digitalWrite(13, HIGH);
+    }
+
+    if (comando.indexOf("apagar") >= 0) {
+      digitalWrite(13, LOW);
+    }
+  }
+}
 ```
+
+---
+
+## 🐍 Archivos Python
+
+### `app_visual.py` — Interfaz gráfica con Tkinter
+Muestra un círculo que simula el LED (gris = apagado, amarillo = encendido) con botones de control y respuesta por voz.
+
+### `voz_arduino.py` — Versión consola con sonido
+Control por texto desde la terminal con beep de frecuencia alta al encender y baja al apagar.
+
+---
+
+## ▶️ Instrucciones de uso
+
+```bash
+pip install pyttsx3
+python app_visual.py
+```
+
+### Comandos disponibles
+
+| Comando | Acción |
+|---------|--------|
+| `encender` | Enciende el LED |
+| `apagar` | Apaga el LED |
+| `estado` | Dice el estado actual |
+| `salir` | Cierra el sistema |
+
+---
+
+## 🧠 Conceptos aplicados
+
+- Comunicación **serial** entre Python y Arduino
+- Interfaces gráficas con **Tkinter**
+- Síntesis de voz con **pyttsx3**
+- Control de pines digitales con `digitalWrite()`
+- Simulación de circuitos en **Tinkercad**
+
+---
+
+*Punto 1 — Taller Sistemas Digitales 2026*
 ---
  Videos de evidencia
 Punto 2 — Juego OLED: https://youtube.com/shorts/u5heSupkzH0
